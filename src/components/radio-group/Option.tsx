@@ -6,12 +6,15 @@ import { useEnterSubmit } from './hooks/useEnterSubmit';
 import styles from './RadioGroup.module.scss';
 
 type OptionProps = {
-	value: OptionType['value'];
-	title: OptionType['title'];
-	selected: OptionType;
-	groupName: string;
-	onChange?: (option: OptionType) => void;
-	option: OptionType;
+	/*тип для пропса компонента Option.Здесь определили свойства, который компонент принимает*/
+	value: OptionType['value'] /*свойство содержит значение, которое будет использоваться в элементе <input> с типом radio.*/;
+	title: OptionType['title'] /*название выбранного элемента - заголовок*/;
+	selected: OptionType /*представляет выбранный элемент*/;
+	groupName: string /*название группы радиокнопок, к которой относится выбранный элемент.*/;
+	onChange?: (
+		option: OptionType
+	) => void /*необязательная функция, которая вызывается при изменении выбранного элемента. */;
+	option: OptionType /*Содержит выбранный элемент. Это может быть использовано для отображения информации о выбранном элементе в интерфейсе приложения.*/;
 };
 
 export const Option = (props: OptionProps) => {

@@ -26,4 +26,7 @@ export const useEnterOptionSubmit = ({
 			option.removeEventListener('keydown', handleEnterKeyDown);
 		};
 	}, [value, onClick, optionRef]);
-};
+}; /*функция обрабатывает нажатие клавиши "Enter" в элементе option и
+	вызывает функцию onClick, передавая ей значение value.
+	Это позволяет реализовать поведение, когда при нажатии клавиши "Enter"
+	происходит какое-то действие, связанное с данным элементом.*/
