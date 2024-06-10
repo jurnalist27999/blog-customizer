@@ -16,17 +16,7 @@ const domNode = document.getElementById(
 const root = createRoot(domNode);
 
 const App = () => {
-	const [formState, setFormState] = useState(defaultArticleState);
 	const [articlState, setArticlaState] = useState(defaultArticleState);
-
-	const onSubmit = () => {
-		setArticlaState(formState);
-	};
-
-	const onReset = () => {
-		setArticlaState(defaultArticleState);
-		setFormState(defaultArticleState);
-	};
 
 	return (
 		<div
@@ -40,12 +30,7 @@ const App = () => {
 					'--bg-color': articlState.backgroundColor.value,
 				} as CSSProperties
 			}>
-			<ArticleParamsForm
-				state={formState}
-				setState={setFormState}
-				onSubmit={onSubmit}
-				onReset={onReset}
-			/>
+			<ArticleParamsForm setArticlaState={setArticlaState} />
 			<Article />
 		</div>
 	);
