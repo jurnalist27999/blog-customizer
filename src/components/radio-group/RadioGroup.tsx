@@ -5,13 +5,18 @@ import { Option } from './Option';
 import styles from './RadioGroup.module.scss';
 
 type RadioGroupProps = {
-	name: string;
-	options: OptionType[];
-	selected: OptionType;
-	onChange?: (value: OptionType) => void;
-	title: string;
+	name: string; //уникальное имя группы радиокнопок
+	options: OptionType[] /*массив объектов, каждый из которых
+							представляет собой отдельную опцию.
+							Объект может содержать следующие поля: value
+							(значение опции), title (заголовок опции).*/;
+	selected: OptionType; //выбранная опция
+	onChange?: (
+		value: OptionType
+	) => void /*функция обратного вызова, которая вызывается при изменении выбранной опции.*/;
+	title: string; //заголовок группы радиокнопок
 };
-
+//компонент радиогруп
 export const RadioGroup = (props: RadioGroupProps) => {
 	const { name, options, selected, onChange, title } = props;
 
@@ -28,7 +33,7 @@ export const RadioGroup = (props: RadioGroupProps) => {
 			)}
 			<div className={styles.group}>
 				{options.map((option) => (
-					<Option
+					<Option /*компонент - отдельная радиокнопка*/
 						key={option.value}
 						groupName={name}
 						value={option.value}
@@ -36,7 +41,10 @@ export const RadioGroup = (props: RadioGroupProps) => {
 						selected={selected}
 						onChange={() => handleChange(option)}
 						option={option}
-					/>
+					/> /*При изменении выбранной опции вызывается функция
+						handleChange, которая, в свою очередь,
+						вызывает функцию onChange, переданную
+						в качестве свойства.*/
 				))}
 			</div>
 		</div>

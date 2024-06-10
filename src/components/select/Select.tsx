@@ -20,6 +20,7 @@ type SelectProps = {
 	title?: string;
 };
 
+/*компонент - выпадающий список*/
 export const Select = (props: SelectProps) => {
 	const { options, placeholder, selected, onChange, onClose, title } = props;
 	const [isOpen, setIsOpen] = useState<boolean>(false);

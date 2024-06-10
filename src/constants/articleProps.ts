@@ -1,4 +1,7 @@
 export const fontFamilyClasses = [
+	/*массив строк с названием шрифтов
+									Эти названия нужно использовать в качестве
+									классов CSS для управления шрифтами*/
 	'open-sans',
 	'ubuntu',
 	'cormorant-garamond',
@@ -7,12 +10,14 @@ export const fontFamilyClasses = [
 ] as const;
 
 export type FontFamiliesClasses = (typeof fontFamilyClasses)[number];
+/*Создали тип для массива шрифтов(с нумирацей),
+который соответствует типу массива строк с названием шрифтов. */
 
 export type OptionType = {
 	title: string;
 	value: string;
-	className: string;
-	optionClassName?: string;
+	className: string /*название класса чего??*/;
+	optionClassName?: string /*название конкретной опции (например определнного шрифта)*/;
 };
 
 export const fontFamilyOptions: OptionType[] & {
@@ -169,7 +174,7 @@ export const fontSizeOptions: OptionType[] = [
 ];
 
 export const defaultArticleState = {
-	fontFamilyOption: fontFamilyOptions[0],
+	/*настройки для радиогрупп*/ fontFamilyOption: fontFamilyOptions[0],
 	fontColor: fontColors[0],
 	backgroundColor: backgroundColors[0],
 	contentWidth: contentWidthArr[0],

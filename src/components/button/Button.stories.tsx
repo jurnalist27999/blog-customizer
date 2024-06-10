@@ -15,7 +15,7 @@ export const ButtonStory: Story = {
 			<>
 				<Button
 					title='Сбросить'
-					type='reset'
+					type='reset' /*сброс*/
 					onClick={() => alert('клик на кнопку сбросить')}
 				/>
 				<Button
